@@ -16362,14 +16362,11 @@ function takeshot() {
                 },
                 body: formdata
             }).then(data => data.json()).then(data => {
-                console.log(data);
+                VanillaSharing.telegram({
+                    url: data.link,
+                    title: 'Check it out my wordohl result! :P',
+                })
             })
-            // VanillaSharing.email({
-            //     to: 'devinwreeks@gmail.com  ',
-            //     url: 'gog.com',
-            //     title: 'hey',
-            //     description: 'this is',
-            //     subject: 'some description',
-            // })
+
         })
 }
