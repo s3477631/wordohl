@@ -16365,11 +16365,14 @@ function takeshot() {
                 },
                 body: formdata
             }).then(data => data.json()).then(data => {
-                console.log(data)
-                VanillaSharing.telegram({
-                    url: data.data.link,
-                    title: 'Check it out my wordohl result! :P',
+                const text = 'Check it out my wordohl result! :P'
+                fetch(`https://t.me/share/url?url=${data.data.link}&text=${text}`).then(res => {
+                    console.log('res');
                 })
+                // VanillaSharing.telegram({
+                //     url: data.data.link,
+                //     title: 'Check it out my wordohl result! :P',
+                // })
             })
 
         })
