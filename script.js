@@ -16352,5 +16352,24 @@ function takeshot() {
             link.download = `${new Date().toLocaleString('en-AU')}.png`;
             link.href = canvas.toDataURL()
             link.click();
+
+            const formdata = new FormData()
+            formdata.append("image", canvas.toDataURL())
+            fetch("https://api.imgur.com/3/image/", {
+                method: "post",
+                headers: {
+                    Authorization: "Client-ID aa85fdf394fcf73"
+                },
+                body: formdata
+            }).then(data => data.json()).then(data => {
+                console.log(data);
+            })
+            // VanillaSharing.email({
+            //     to: 'devinwreeks@gmail.com  ',
+            //     url: 'gog.com',
+            //     title: 'hey',
+            //     description: 'this is',
+            //     subject: 'some description',
+            // })
         })
 }
