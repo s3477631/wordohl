@@ -16354,7 +16354,7 @@ function takeshot() {
             link.click();
 
             const formdata = new FormData()
-            formdata.append("image", canvas.toDataURL())
+            formdata.append("image", canvas.toDataURL("image/jpeg").split(';base64,')[1])
             fetch("https://api.imgur.com/3/image/", {
                 method: "post",
                 headers: {
