@@ -16364,7 +16364,7 @@ function takeshot() {
             }).then(data => data.json()).then(data => {
                 console.log(data)
                 VanillaSharing.telegram({
-                    url: data.link,
+                    url: data.data.link,
                     title: 'Check it out my wordohl result! :P',
                 })
             })
