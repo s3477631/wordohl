@@ -16289,7 +16289,7 @@ const createGrid = (wordLength) => {
     const gridContainer = document.createElement('div');
     const grid = document.querySelector('.guess-grid')
     grid.innerHTML = '';
-    for (let z = 0; z < wordLength; z++) {
+    for (let z = 0; z < 5; z++) {
         for (let i = 0; i < wordLength; i++) {
             const input = document.createElement('div');
             input.className = 'tile';
@@ -16302,12 +16302,12 @@ const createGrid = (wordLength) => {
             if (wordLength == 6) {
                 // gridContainer.className = 'sixgrid';
                 root.style.setProperty('--grid-cols', 6);
-                root.style.setProperty('--grid-rows', 6);
+                root.style.setProperty('--grid-rows', 5);
             }
             if (wordLength == 8) {
                 // gridContainer.className = 'eightgrid';
                 root.style.setProperty('--grid-cols', 8);
-                root.style.setProperty('--grid-rows', 8);
+                root.style.setProperty('--grid-rows', 5);
             }
             grid.appendChild(input);
         }
@@ -16346,6 +16346,12 @@ selectInput.addEventListener('keydown', function (event) {
 
 getWordLength();
 
+function encodeParams(obj) {
+    return Object.keys(obj)
+        .filter((k) => typeof obj[k] !== 'undefined' && obj[k] !== '')
+        .map((k) => `${encodeURIComponent(k)}=${encodeURIComponent(obj[k])}`)
+        .join('&');
+}
 
 function takeshot() {
     let div = document.querySelector('body');
@@ -16366,9 +16372,9 @@ function takeshot() {
                 body: formdata
             }).then(data => data.json()).then(data => {
                 const text = 'Check it out my wordohl result! :P'
-                fetch(`https://t.me/share/url?url=${data.data.link}&text=${text}`).then(res => {
-                    console.log('res');
-                })
+                // fetch(`https://t.me/share/url?url=${data.data.link}&text=${text}`).then(res => {
+                //     console.log('res');
+                // })
                 // VanillaSharing.telegram({
                 //     url: data.data.link,
                 //     title: 'Check it out my wordohl result! :P',
