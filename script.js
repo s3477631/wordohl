@@ -16289,7 +16289,7 @@ const createGrid = (wordLength) => {
     const gridContainer = document.createElement('div');
     const grid = document.querySelector('.guess-grid')
     grid.innerHTML = '';
-    for (let z = 0; z < 5; z++) {
+    for (let z = 0; z < wordLength; z++) {
         for (let i = 0; i < wordLength; i++) {
             const input = document.createElement('div');
             input.className = 'tile';
@@ -16297,14 +16297,17 @@ const createGrid = (wordLength) => {
             if (wordLength == 5) {
                 // gridContainer.className = 'fivegrid';
                 root.style.setProperty('--grid-cols', 5);
+                root.style.setProperty('--grid-rows', 5);
             }
             if (wordLength == 6) {
                 // gridContainer.className = 'sixgrid';
                 root.style.setProperty('--grid-cols', 6);
+                root.style.setProperty('--grid-rows', 6);
             }
             if (wordLength == 8) {
                 // gridContainer.className = 'eightgrid';
                 root.style.setProperty('--grid-cols', 8);
+                root.style.setProperty('--grid-rows', 8);
             }
             grid.appendChild(input);
         }

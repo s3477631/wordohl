@@ -16,12 +16,12 @@ body {
 
 .keyboard {
   display: grid;
-  grid-template-columns: repeat(20, minmax(auto, 1.25em));
-  grid-auto-rows: 3em;
+  grid-template-columns: repeat(20, minmax(auto, 3.25em));
+  grid-auto-rows: 3.5em;
   gap: .25em;
   justify-content: center;
   margin-bottom: 60px;
-  flex: 1;
+  flex: 2;
 }
 
 select {
@@ -91,9 +91,9 @@ select:focus {
   align-content: center;
   flex-grow: 1;
   grid-template-columns: repeat(var(--grid-cols), 4em);
-  grid-template-rows: repeat(6, 4em);
+  grid-template-rows: repeat(var(--grid-rows), 4em);
   gap: .25em;
-  margin-bottom: 1em;
+  /*margin-bottom: 1em;*/
 }
 
 .tile {
