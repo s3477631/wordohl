@@ -16319,8 +16319,17 @@ const getWordLength = () => {
   if(WORD_LENGTH == 8){
    targetWord = eightLetterWords[getRandomInt(eightLetterWords.length)]
   }
-  console.log(targetWord);
   createGrid(WORD_LENGTH);
   startInteraction();
 }
+
+const selectInput = document.querySelector('#wordLength')
+
+selectInput.addEventListener('keydown',function(event){
+  if(event.keyCode == 13) {
+    event.preventDefault();
+    return false;
+  }
+});
+
 getWordLength();

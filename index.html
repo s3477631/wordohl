@@ -3,10 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- Primary Meta Tags -->
+  <title>Wordohl.</title>
+  <meta name="title" content="Wordohl.">
+  <meta name="description" content="Choose from 5, 6 and 8 letter words. Made for my Dad.  Wordle clone with varying levels of difficulty.">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.wordohl.com/">
+  <meta property="og:title" content="Wordohl.">
+  <meta property="og:description" content="Choose from 5, 6 and 8 letter words. Made for my Dad.  Wordle clone with varying levels of difficulty.">
+  <meta property="og:image" content="">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.wordohl.com/">
+  <meta property="twitter:title" content="Wordohl.">
+  <meta property="twitter:description" content="Choose from 5, 6 and 8 letter words. Made for my Dad.  Wordle clone with varying levels of difficulty.">
+  <meta property="twitter:image" content="">
+
+  <link rel="manifest" href="site.webmanifest">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
-  <title>Wordle Clone</title>
+
+
 </head>
 <body>
   <div class="alert-container" data-alert-container></div>
@@ -43,7 +65,7 @@
 <!--    <div class="tile"></div>-->
   </div>
   <div style="display: flex; justify-content: center; margin-bottom: 10px;">
-    <select onchange="getWordLength()"  id="wordLength">
+    <select oninput="getWordLength()"  id="wordLength">
       <option value="5">5 words</option>
       <option value="6">6 words</option>
       <option value="8">8 words</option>

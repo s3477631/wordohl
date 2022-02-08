@@ -11,6 +11,7 @@ body {
   margin: 0;
   padding: 1em;
   font-size: clamp(.5rem, 2.5vmin, 1.5rem);
+  overflow: hidden;
 }
 
 .keyboard {
@@ -19,6 +20,8 @@ body {
   grid-auto-rows: 3em;
   gap: .25em;
   justify-content: center;
+  margin-bottom: 60px;
+  flex: 1;
 }
 
 select {
