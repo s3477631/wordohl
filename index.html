@@ -27,43 +27,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js">
+  </script>
 
 
 </head>
 <body>
   <div class="alert-container" data-alert-container></div>
   <div data-guess-grid class="guess-grid">
-<!--    <div class="tile"></div>-->
-<!--    <div class="tile"></div>-->
-<!--    <div class="tile"></div>-->
-<!--    <div class="tile"></div>-->
-<!--    <div class="tile"></div>-->
-<!--    <div class="tile"></div>-->
-<!--    <div class="tile"></div>-->
-<!--    <div class="tile"></div>-->
-<!--    <div class="tile"></div>-->
-<!--    <div class="tile"></div>-->
-<!--    <div class="tile"></div>-->
-<!--    <div class="tile"></div>-->
-<!--    <div class="tile"></div>-->
-<!--    <div class="tile"></div>-->
-<!--    <div class="tile"></div>-->
-<!--    <div class="tile"></div>-->
-<!--    <div class="tile"></div>-->
-<!--    <div class="tile"></div>-->
-<!--    <div class="tile"></div>-->
-<!--    <div class="tile"></div>-->
-<!--    <div class="tile"></div>-->
-<!--    <div class="tile"></div>-->
-<!--    <div class="tile"></div>-->
-<!--    <div class="tile"></div>-->
-<!--    <div class="tile"></div>-->
-<!--    <div class="tile"></div>-->
-<!--    <div class="tile"></div>-->
-<!--    <div class="tile"></div>-->
-<!--    <div class="tile"></div>-->
-<!--    <div class="tile"></div>-->
   </div>
+
+
   <div style="display: flex; justify-content: center; margin-bottom: 10px;">
     <select oninput="getWordLength()"  id="wordLength">
       <option value="5">5 words</option>
@@ -71,6 +45,9 @@
       <option value="8">8 words</option>
     </select>
   </div>
+
+
+
   <div data-keyboard class="keyboard">
     <button class="key" data-key="Q">Q</button>
     <button class="key" data-key="W">W</button>
@@ -107,5 +84,11 @@
       </svg>
     </button>
   </div>
+
+
+
+  <h1>Screenshot:</h1>
+  <div id="output"></div>
+
 </body>
 </html>
