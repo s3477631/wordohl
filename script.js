@@ -16067,7 +16067,7 @@ const dayOffset = msOffset / 1000 / 60 / 60 / 24
 let targetWord = '';
 let root = document.documentElement;
 
-// startInteraction()
+startInteraction()
 
 function startInteraction() {
   document.addEventListener("click", handleMouseClick)
@@ -16147,7 +16147,6 @@ function submitGuess() {
 
   if(WORD_LENGTH == 5) {
     if (!dictionary.includes(guess)) {
-      alert('heyre')
       showAlert("Not in word list")
       shakeTiles(activeTiles)
       return
@@ -16254,9 +16253,13 @@ function checkWinLose(guess, tiles) {
   }
 
   const remainingTiles = guessGrid.querySelectorAll(":not([data-letter])")
-  if (remainingTiles.length === 0) {
+  console.log(remainingTiles);
+  if (remainingTiles.length === 1) {
     showAlert(targetWord.toUpperCase(), null)
     stopInteraction()
+    window.setTimeout(() => {
+      location.reload()
+    }, 2500)
   }
 }
 
@@ -16308,7 +16311,7 @@ function getRandomInt(max) {
 }
 
 const getWordLength = () => {
-  stopInteraction();
+  // stopInteraction();
   WORD_LENGTH = document.querySelector('#wordLength').value
   if(WORD_LENGTH == 5) {
    targetWord = targetWords[getRandomInt(targetWords.length)]
@@ -16320,7 +16323,7 @@ const getWordLength = () => {
    targetWord = eightLetterWords[getRandomInt(eightLetterWords.length)]
   }
   createGrid(WORD_LENGTH);
-  startInteraction();
+  // startInteraction();
 }
 
 const selectInput = document.querySelector('#wordLength')
