@@ -21,6 +21,17 @@ body {
   justify-content: center;
 }
 
+select {
+  padding: 8px;
+  background-color: #323232;
+  color: white;
+  border-radius: 5px !important;
+}
+
+select:focus {
+  outline: none;
+}
+
 .key {
   font-size: inherit;
   grid-column: span 2;
@@ -76,7 +87,7 @@ body {
   justify-content: center;
   align-content: center;
   flex-grow: 1;
-  grid-template-columns: repeat(5, 4em);
+  grid-template-columns: repeat(var(--grid-cols), 4em);
   grid-template-rows: repeat(6, 4em);
   gap: .25em;
   margin-bottom: 1em;
@@ -155,23 +166,23 @@ body {
 @keyframes dance {
   20% {
     transform: translateY(-50%);
-  }  
+  }
 
   40% {
     transform: translateY(5%);
-  }  
+  }
 
   60% {
     transform: translateY(-25%);
-  }  
+  }
 
   80% {
     transform: translateY(2.5%);
-  }  
+  }
 
   90% {
     transform: translateY(-5%);
-  }  
+  }
 
   100% {
     transform: translateY(0);
